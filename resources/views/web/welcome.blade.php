@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    @include('layouts.web.head');
+    @include('web.layouts.head');
     
   </head>
   <body>
@@ -17,7 +17,7 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     
-    @include('layouts.web.header');
+    @include('web.layouts.header');
 
     <div class="slide-one-item home-slider owl-carousel">
       
@@ -400,7 +400,7 @@
       </div>
     </div>
     
-    @include('layouts.web.footer');
+    @include('web.layouts.footer');
 
   </div>
 

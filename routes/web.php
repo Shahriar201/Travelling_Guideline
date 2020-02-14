@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.welcome');
+});
+
+Route::get('admin/home', function ()
+{
+    return view('admin.welcome');
 });
