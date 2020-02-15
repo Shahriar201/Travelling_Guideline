@@ -37,25 +37,25 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-pie"></i>
             <p>
-              ADD
+              View
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{ route('region.create') }}" class="nav-link">
+              <a href="{{ route('region.index') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Region</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('place.create') }}" class="nav-link">
+              <a href="{{ route('place.index') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Place</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('guide.create') }}" class="nav-link">
+              <a href="{{ route('guide.index') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Guide</p>
               </a>
@@ -70,7 +70,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-pie"></i>
             <p>
-              VIEW
+              Add
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>

@@ -58,12 +58,10 @@
                                             <thead>
                                                 <tr>
                                                     <th style="width: 15px">id</th>
-                                                    <th>Title</th>
+                                                    <th>Name</th>
                                                     <th>Description</th>
-                                                    <th>Place_id</th>
-                                                    <th>Region_id</th>
-                                                    <th>Nearby_Hotel</th>
                                                     <th style="width: 100px">Image</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -75,12 +73,8 @@
                                                             <div class="" style="width: 55%">Write down desctription</div>
                                                         </div>
                                                     </td>
-                                                    <td>Place_id</td>
-                                                    <td>Region_id</td>
-                                                    <td>Nearby_Hotel</td>
                                                     <td>Insert image</td>
                                                     <td>
-                                                        <a href="" class="btn btn-primary">Insert</a>
                                                         <!-- <a href="" class="btn btn-info">View</a> -->
                                                         <a href="" class="btn btn-success">Edit</a>
                                                         <a href="" class="btn btn-danger">Delete</a>

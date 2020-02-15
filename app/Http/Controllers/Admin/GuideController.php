@@ -14,7 +14,7 @@ class GuideController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.add.guide');
     }
 
     /**
@@ -24,7 +24,7 @@ class GuideController extends Controller
      */
     public function create()
     {
-        return view('admin.guide.guide');
+       
     }
 
     /**

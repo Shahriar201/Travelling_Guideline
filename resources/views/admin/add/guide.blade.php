@@ -29,7 +29,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Regions</h1>
+                            <h1 class="m-0 text-dark">Guides</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -58,11 +58,12 @@
                                             <thead>
                                                 <tr>
                                                     <th style="width: 15px">id</th>
-                                                    <th>Name</th>
+                                                    <th>Title</th>
                                                     <th>Description</th>
-                                                    <th style="width: 100px">Image</th>
-                                                    <th>Location</th>
+                                                    <th>Place_id</th>
                                                     <th>Region_id</th>
+                                                    <th>Nearby_Hotel</th>
+                                                    <th style="width: 100px">Image</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -74,12 +75,13 @@
                                                             <div class="" style="width: 55%">Write down desctription</div>
                                                         </div>
                                                     </td>
+                                                    <td>Place_id</td>
+                                                    <td>Region_id</td>
+                                                    <td>Nearby_Hotel</td>
                                                     <td>Insert image</td>
-                                                    <td>Location</td>
-                                                    <td>region_id</td>
                                                     <td>
-                                                        <a href="" class="btn btn-primary">Insert</a>
-                                                        <a href="" class="btn btn-info">View</a>
+                                                        <!-- <a href="" class="btn btn-primary">Insert</a> -->
+                                                        <!-- <a href="" class="btn btn-info">View</a> -->
                                                         <a href="" class="btn btn-success">Edit</a>
                                                         <a href="" class="btn btn-danger">Delete</a>
                                                     </td>
