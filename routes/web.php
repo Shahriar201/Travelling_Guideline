@@ -1,8 +1,8 @@
 <?php
 
-Route::resource('dashboard/region','Admin\RegionController');
-Route::resource('dashboard/place','Admin\PlaceController');
-Route::resource('dashboard/guide','Admin\GuideController');
+Route::resource('admin/region','Admin\RegionController');
+Route::resource('admin/place','Admin\PlaceController');
+Route::resource('admin/guide','Admin\GuideController');
 
 
 
@@ -14,3 +14,5 @@ Route::get('admin/home', function ()
 {
     return view('admin.welcome');
 });
+
+

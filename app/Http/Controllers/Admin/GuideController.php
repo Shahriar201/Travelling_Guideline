@@ -24,7 +24,7 @@ class GuideController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.guide.guide');
     }
 
     /**
