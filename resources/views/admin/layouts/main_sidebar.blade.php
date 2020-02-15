@@ -13,7 +13,7 @@
         <img src="{{ asset('asset/backend/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Shahriar Islam</a>
+        <a href="{{ url('admin/home') }}" class="d-block">Shahriar Islam</a>
       </div>
     </div>
 
@@ -31,7 +31,40 @@
             </p>
           </a>
 
+          <!-- Add Content Start-->
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-chart-pie"></i>
+            <p>
+              Add
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('region.create') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Region</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('place.create') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Place</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('guide.create') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Guide</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- Add Content End -->
 
+
+        <!--View Content-->
 
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -62,41 +95,6 @@
             </li>
           </ul>
         </li>
-
-
-
-        <!-- VIEW START -->
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-chart-pie"></i>
-            <p>
-              Add
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="pages/charts/chartjs.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Region</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/charts/flot.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Place</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/charts/inline.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Guide</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-
-
         <!-- VIEW END -->
 
 

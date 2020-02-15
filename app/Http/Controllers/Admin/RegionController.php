@@ -14,7 +14,7 @@ class RegionController extends Controller
      */
     public function index()
     {
-        return view('admin.add.region');
+        return view('admin.view.region');
     }
 
     /**
@@ -24,7 +24,7 @@ class RegionController extends Controller
      */
     public function create()
     {
-        
+        return view('admin.add.region');
     }
 
     /**
