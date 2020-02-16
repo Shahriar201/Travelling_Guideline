@@ -5,7 +5,6 @@ Route::resource('admin/place','Admin\PlaceController');
 Route::resource('admin/guide','Admin\GuideController');
 
 
-
 Route::get('/', function () {
     return view('web.welcome');
 });

@@ -46,31 +46,58 @@
 
             <div class="col-md-8">
                 <!-- general form elements -->
-                <div class="card card-primary">
-                    <!-- /.card-header -->
-                    <!-- form start -->
-                    <form role="form">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Name</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Description</label>
-                                <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder="textarea"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                                        <label class="custom-file-label" for="exampleInputFile">Choose image</label>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form action="{{ route('region.store') }}" method="post" novalidate="novalidate" enctype="multipart/form-data">
+                    @method('post') @csrf
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+
+                            <!-- message for data sent -->
+                            <span class="badge badge-success" style="float: right">{{ Session::get('success') }}</span>
+
+                            <input class="form-control" name="name" id="name" type="text" placeholder="Enter Enter " required="required" data-validation-required-message="Please enter your name.">
+                            <p class="help-block text-danger"></p>
+                            @if ($errors->has('name'))
+                                <span class="invalid-feedback" style="display: block;" role="alert">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                            @endif
 
                         </div>
-                        <!-- /.card-body -->
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Description</label>
+
+                            <textarea class="form-control" name="description" id="description" type="text" placeholder="Enter Desctription " required="required" data-validation-required-message="Please enter your name."></textarea>
+
+                            <p class="help-block text-danger"></p>
+                            @if ($errors->has('description'))
+                                <span class="invalid-feedback" style="display: block;" role="alert">
+                                    <strong>{{ $errors->first('description') }}</strong>
+                                </span>
+                            @endif
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+
+                                    <input class="custom-file-input" name="image" id="image" type="file" required="required" data-validation-required-message="Please enter your image.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                @if ($errors->has('image'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                                            <strong>{{ $errors->first('image') }}</strong>
+                                                        </span> @endif
+
+                                <label class="custom-file-label" for="exampleInputFile">Choose image</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- /.card-body -->
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>

@@ -67,19 +67,22 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>1.</td>
-                                                    <td>Update software</td>
+                                                    @foreach($regions as $region)
+
+                                                    <td>{{ $region->id  }}</td>
+                                                    <td>{{ $region->name  }}</td>
                                                     <td>
                                                         <div class="">
-                                                            <div class="" style="width: 55%">Write down desctription</div>
+                                                            <div class="" style="width: 55%">{{ $region->description }}</div>
                                                         </div>
                                                     </td>
-                                                    <td>Insert image</td>
+                                                    <td>{{ $region->image  }}</td>
                                                     <td>
                                                         <!-- <a href="" class="btn btn-info">View</a> -->
                                                         <a href="" class="btn btn-success">Edit</a>
                                                         <a href="" class="btn btn-danger">Delete</a>
                                                     </td>
+                                                        @endforeach
                                                 </tr>
                                             </tbody>
                                         </table>
