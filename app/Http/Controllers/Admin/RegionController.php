@@ -14,6 +14,7 @@ class RegionController extends Controller
     public function index()
     {
         $regions = Region::orderBy('id')->get();
+
         return view('admin.view.region',['regions'=> $regions]);
     }
 
@@ -28,7 +29,7 @@ class RegionController extends Controller
         $region = Region::create($this->validateRequest());
         $this->storeImage($region);
         return redirect()->route('region.create')
-            ->with('success', 'Blog created successfully.');
+            ->with('success', 'Region created successfully.');
     }
 
 
@@ -46,8 +47,11 @@ class RegionController extends Controller
     {
     }
 
-    public function destroy($id)
+    public function destroy(Region $region)
     {
+        Region::find($region->id)->delete();
+
+        return redirect()->route('region.index');
     }
 
     public function validateRequest()

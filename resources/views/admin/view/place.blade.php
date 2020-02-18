@@ -55,30 +55,45 @@
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" style="padding-right: 20px;">
                                             <thead>
                                                 <tr>
                                                     <th style="width: 15px">id</th>
                                                     <th>Name</th>
                                                     <th>Description</th>
-                                                    <th style="width: 100px">Image</th>
+                                                    <th style="width: 5px">Image</th>
                                                     <th>Location</th>
-                                                    <th>Region_id</th>
+                                                    <th>Region</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+
+                                            <?php $id = 1; ?>
+
+                                            @foreach($places as $place)
+
                                                 <tr>
-                                                    <td>1.</td>
-                                                    <td>Update software</td>
+                                                    <td>{{ $id  }}</td>
+
+                                                    <td>{{ $place->name  }}</td>
+
                                                     <td>
                                                         <div class="">
-                                                            <div class="" style="width: 55%">Write down desctription</div>
+                                                            <div class="" style="width: 30%">{{ $place->description }}</div>
                                                         </div>
                                                     </td>
-                                                    <td>Insert image</td>
-                                                    <td>Location</td>
-                                                    <td>region_id</td>
+
+                                                        <td>{{ $place->image  }}</td>
+
+                                                    <td>
+                                                    <div class="">
+                                                        <div class="" style="width: 100px">{{ $place->location }}</div>
+                                                    </div>
+                                                    </td>
+
+                                                    <td>{{ $place->region->name }}</td>
+
                                                     <td>
                                                         <!-- <a href="" class="btn btn-primary">Insert</a> -->
                                                         <!-- <a href="" class="btn btn-info">View</a> -->
@@ -86,6 +101,10 @@
                                                         <a href="" class="btn btn-danger">Delete</a>
                                                     </td>
                                                 </tr>
+
+                                                <?php $id++ ?>
+                                            @endforeach
+
                                             </tbody>
                                         </table>
                                     </div>

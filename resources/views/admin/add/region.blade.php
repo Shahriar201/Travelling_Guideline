@@ -90,7 +90,8 @@
                                 @if ($errors->has('image'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
                                                             <strong>{{ $errors->first('image') }}</strong>
-                                                        </span> @endif
+                                                        </span>
+                                @endif
 
                                 <label class="custom-file-label" for="exampleInputFile">Choose image</label>
                             </div>

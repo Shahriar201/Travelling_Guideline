@@ -3,84 +3,81 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Place;
 use Illuminate\Http\Request;
 use App\Region;
 
 class PlaceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view('admin.view.place');
+        $data = [
+            'places' => Place::all(),
+            'regions' => Region::all()
+        ];
+        return view('admin.view.place')->with($data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('admin.add.place');
+        $data['places'] = Place::orderBy('id')->get();
+        $data['regions'] = Region::orderBy('id')->get();
+
+        return view('admin.add.place')->with($data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $place = Place::create($this->validateRequest());
+        $this->storeImage($place);
+
+        return redirect()->route('place.create')
+            ->with('success', 'Places created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
+    }
+
+    public function validateRequest()
+    {
+        return tap(request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'location' => 'required',
+            'region_id' => 'required',
+        ]), function () {
+            if (request()->hasFile('image')) {
+                request()->validate([
+                    'image' => 'required|image|max:5000'
+                ]);
+            }
+        });
+    }
+
+    public function storeImage($place)
+    {
+
+        if (request()->has('image')) {
+            $place->update([
+                'image' => request()->image->store('uploads', 'public'),
+            ]);
+        }
     }
 }

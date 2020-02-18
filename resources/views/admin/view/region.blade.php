@@ -61,29 +61,47 @@
                                                     <th style="width: 15px">id</th>
                                                     <th>Name</th>
                                                     <th>Description</th>
-                                                    <th style="width: 100px">Image</th>
+                                                    <th style="">Image</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    @foreach($regions as $region)
 
-                                                    <td>{{ $region->id  }}</td>
+                                            <?php $id = 1; ?>
+
+                                            @foreach($regions as $region)
+
+                                                <tr>
+                                                    <td>{{ $id  }}</td>
                                                     <td>{{ $region->name  }}</td>
+
                                                     <td>
                                                         <div class="">
                                                             <div class="" style="width: 55%">{{ $region->description }}</div>
                                                         </div>
                                                     </td>
+
                                                     <td>{{ $region->image  }}</td>
+
                                                     <td>
                                                         <!-- <a href="" class="btn btn-info">View</a> -->
                                                         <a href="" class="btn btn-success">Edit</a>
-                                                        <a href="" class="btn btn-danger">Delete</a>
+
+                                                        <form action="{{ route('region.destroy', $region->id) }}" method="POST" style="display: inline-block;">
+                                                            @csrf
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <button type="submit" class="btn btn-outline-danger"onclick="return confirm('Are you sure want to delete this post?');"><i class="glyphicon glyphicon-trash"></i>
+                                                                <i class="fas fa-trash">
+                                                                </i>
+                                                                Delete
+                                                            </button>
+                                                        </form>
+
                                                     </td>
-                                                        @endforeach
+
                                                 </tr>
+                                                <?php $id++ ?>
+                                            @endforeach
                                             </tbody>
                                         </table>
                                     </div>
